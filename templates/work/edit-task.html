@@ -1,0 +1,12 @@
+{% extends 'work/base.html' %}
+
+{% block content %}
+    <form action="" method="POST">
+    {% csrf_token %}
+        <div style="margin: 20px 0 20px 50px">
+            {{ form.as_p }}
+        </div>
+    <input class="btn btn-info" type="submit" value="Edit">
+    </form>
+
+{% endblock %}

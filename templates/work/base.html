@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Lista-Productos-Canito.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navigation-Menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-md text-center">
+        <div class="container-fluid">
+            <div><a class="navbar-brand d-none" href="#"> </a>
+                <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                        class="navbar-toggler-icon"></span></button>
+            </div>
+            <div class="collapse navbar-collapse flex-grow-1" id="navcol-1">
+                <ul class="nav navbar-nav flex-grow-1 align-self-end main-nav">
+                    <li class="nav-item flex-grow-1"><a class="nav-link text-dark" id="home" href="#">{{ request.user }} </a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'user-logout' %}">Log out </a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{% extends 'work/base.html' %}
+{% block content %}
+    <form action="" method="POST" style="margin: 70px 0 30px 50px">
+        {% csrf_token %}
+
+        <div style="float: left; width: 250px;display: none">{{ form.user.label }} :</div>
+        <div style="display: none">{{ form.user }}</div>
+        <br><br>
+
+        <div style="float: left; width: 250px">{{ form.name.label }} :</div>
+        <div>{{ form.name }}</div>
+        <br><br>
+
+        <div style="float: left; width: 250px">{{ form.description.label }} :</div>
+        <div>{{ form.description }}</div>
+        <br><br>
+
+        <div style="float: left; width: 250px">{{ form.end_date.label }} :</div>
+        <div>{{ form.end_date }}</div>
+        <br><br>
+
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+        <input class="btn btn-primary" type="submit" value="Submit">
+
+    </form>
+{% endblock %}
+
