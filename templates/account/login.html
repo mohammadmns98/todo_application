@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Login : </h1>
+{% for message in messages %}
+    <small style="color: #2e56de">{{ message }}</small>
+{% endfor %}
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+
+    username :
+    <label>
+        <input type="text" name="username">
+    </label>
+        <br><br>
+        password :
+    <label>
+        <input type="password" name="password">
+    </label>
+    <br><br>
+
+        <input type="submit" value="Login"><br><br>
+</form>
+
+<h4><a href="{% url 'user-create' %}">if you don't have account, please click here</a></h4>
+</body>
+</html>
